@@ -7,7 +7,7 @@ if (!process.env.STRIPE_SECRET_KEY) {
   );
 }
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy', {
   typescript: true,
 });
 
