@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-carbon-950: #0a0a0a;
+  --color-carbon-900: #111111;
+  --color-carbon-850: #161616;
+  --color-carbon-800: #1a1a1a;
+  --color-carbon-700: #2a2a2a;
+  --color-carbon-600: #3a3a3a;
+  --color-carbon-500: #555555;
+  --color-silver-100: #f0ede8;
+  --color-silver-200: #d6d2cc;
+  --color-silver-300: #bfbab3;
+  --color-silver-400: #9e998f;
+  --color-silver-500: #7a756d;
+  --color-gold-400: #ddb96a;
+  --color-gold-500: #c9a24d;
+  --color-gold-600: #a8853a;
+  --color-gold-900: #3d2e05;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* ── Base ──────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-carbon-950);
+  color: var(--color-silver-200);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Global font inheritance ─────────────── */
+/* Eliminates the need for inline style={{ fontFamily }} everywhere */
+h1, h2, h3, h4, h5, h6, blockquote {
+  font-family: var(--font-display);
+}
+
+p, span, a, button, input, textarea, select, label, li {
+  font-family: var(--font-body);
+}
+
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-carbon-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-carbon-600);
+  border-radius: 3px;
+}
+
+/* ── Frosted-glass utility ─────────────────── */
+.glass {
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Text gradient ─────────────────────────── */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ddb96a 0%, #c9a24d 50%, #ddb96a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #f0ede8 0%, #bfbab3 50%, #d6d2cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Grain overlay ─────────────────────────── */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ── Animations ────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes revealFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes borderGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 64px;
+  }
+}
+
+@keyframes scaleReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-reveal-left {
+  animation: revealFromLeft 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-scale-reveal {
+  animation: scaleReveal 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-float {
+  animation: floatSubtle 6s ease-in-out infinite;
+}
+
+.animate-border-grow {
+  animation: borderGrow 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Stagger children – varied timing for natural feel */
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.18s; }
+.stagger > *:nth-child(3) { animation-delay: 0.35s; }
+.stagger > *:nth-child(4) { animation-delay: 0.5s; }
+.stagger > *:nth-child(5) { animation-delay: 0.62s; }
+
+/* ── Scroll reveal ─────────────────────────── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+              transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+              transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.scroll-reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+              transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.scroll-reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+              transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.scroll-reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Focus ring ────────────────────────────── */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-gold-500) !important;
+  box-shadow: 0 0 0 2px rgba(201, 162, 77, 0.15);
+}
+
+/* ── Product detail page ──────────────────── */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.product-image-enter {
+  animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.product-details-enter {
+  animation: slideInRight 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+  opacity: 0;
+}
+
+/* ── Decorative quote marks ──────────────── */
+.quote-mark {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 0;
+  color: var(--color-gold-500);
+  opacity: 0.15;
+  position: absolute;
+  user-select: none;
+}

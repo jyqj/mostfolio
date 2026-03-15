@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ord-001",
+    "customerName": "Demo Customer A",
+    "customerEmail": "demo-a@example.com",
+    "shippingAddress": "123 Example St, Springfield, IL 62701",
+    "status": "shipped",
+    "items": [
+      {"productId": "rng-1", "productName": "The Obsidian Signet", "quantity": 1, "price": 190},
+      {"productId": "chn-1", "productName": "Heavyweight Cuban 12mm", "quantity": 1, "price": 286}
+    ],
+    "totalAmount": 476,
+    "createdAt": "2025-03-08T14:23:00.000Z"
+  },
+  {
+    "id": "ord-002",
+    "customerName": "Demo Customer B",
+    "customerEmail": "demo-b@example.com",
+    "shippingAddress": "456 Sample Ave, Metropolis, NY 10001",
+    "status": "delivered",
+    "items": [
+      {"productId": "brc-2", "productName": "Titanium Cuff", "quantity": 1, "price": 229}
+    ],
+    "totalAmount": 229,
+    "createdAt": "2025-03-05T09:15:00.000Z"
+  },
+  {
+    "id": "ord-003",
+    "customerName": "Demo Customer C",
+    "customerEmail": "demo-c@example.com",
+    "shippingAddress": "789 Test Blvd, Star City, CA 90001",
+    "status": "pending",
+    "items": [
+      {"productId": "rng-4", "productName": "Damascus Steel Band", "quantity": 1, "price": 313},
+      {"productId": "rng-7", "productName": "Architect Geometric", "quantity": 1, "price": 506},
+      {"productId": "chn-4", "productName": "North Star Pendant", "quantity": 1, "price": 298}
+    ],
+    "totalAmount": 1117,
+    "createdAt": "2025-03-12T18:45:00.000Z"
+  },
+  {
+    "id": "ord-004",
+    "customerName": "Demo Customer D",
+    "customerEmail": "demo-d@example.com",
+    "shippingAddress": "321 Mock Rd, Central City, TX 77001",
+    "status": "delivered",
+    "items": [
+      {"productId": "brc-1", "productName": "Braided Leather Wrap", "quantity": 2, "price": 158}
+    ],
+    "totalAmount": 316,
+    "createdAt": "2025-02-28T11:30:00.000Z"
+  },
+  {
+    "id": "ord-005",
+    "customerName": "Demo Customer E",
+    "customerEmail": "demo-e@example.com",
+    "shippingAddress": "555 Placeholder St, Coast City, CA 94001",
+    "status": "shipped",
+    "items": [
+      {"productId": "chn-9", "productName": "Lion Head Medallion", "quantity": 1, "price": 502},
+      {"productId": "rng-13", "productName": "Oxidized Skull Ring", "quantity": 1, "price": 412}
+    ],
+    "totalAmount": 914,
+    "createdAt": "2025-03-10T15:00:00.000Z"
+  }
+]
