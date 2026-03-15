@@ -10,21 +10,21 @@ const SIGNATURE_PRODUCTS = [
     name: 'The Obsidian Forge',
     material: 'Forged Carbon & Solid 925 Silver',
     price: '$280',
-    image: '/images/signature_ring.png',
+    image: '/images/forged_carbon_ring.png',
     href: '/collections',
   },
   {
     name: 'Tungsten Hex Link',
     material: 'Black Tungsten & Industrial Steel',
     price: '$450',
-    image: '/images/bracelets.png',
+    image: '/images/tungsten_steel_bracelet.png',
     href: '/collections',
   },
   {
     name: 'Heavyweight Cuban',
     material: 'Architectural Grade 925 Silver',
     price: '$620',
-    image: '/images/hero.png',
+    image: '/images/heavyweight_cuban_chain.png',
     href: '/collections',
   },
 ];
@@ -32,19 +32,19 @@ const SIGNATURE_PRODUCTS = [
 const CATEGORIES = [
   {
     name: 'Rings',
-    image: '/images/rings.png',
+    image: '/images/rings_dark_exhibit.png',
     href: '/collections?category=Rings',
     tagline: 'Forged statements',
   },
   {
     name: 'Chains',
-    image: '/images/hero.png',
+    image: '/images/chains_dark_exhibit.png',
     href: '/collections?category=Chains',
     tagline: 'Woven strength',
   },
   {
     name: 'Bracelets',
-    image: '/images/bracelets.png',
+    image: '/images/bracelets_dark_exhibit.png',
     href: '/collections?category=Bracelets',
     tagline: 'Bound precision',
   },
@@ -57,7 +57,7 @@ export default function HomePage() {
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/hero.png"
+          src="/images/hero_cuban_chain.png"
           alt="Premium silver cuban link chain"
           fill
           priority
@@ -262,7 +262,7 @@ export default function HomePage() {
             <ScrollReveal variant="right" className="order-1 lg:order-2">
               <div className="relative aspect-[4/5] w-full overflow-hidden border border-carbon-800">
                 <Image
-                  src="/images/metal_texture.png"
+                  src="/images/brushed_metal_texture.png"
                   alt="Raw brushed tungsten and silver texture"
                   fill
                   className="object-cover"
@@ -279,7 +279,7 @@ export default function HomePage() {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image
-             src="/images/foundry_bg.png"
+             src="/images/brutalist_jewelry_foundry.png"
              alt="Brutalist jewelry foundry"
              fill
              className="object-cover object-center"

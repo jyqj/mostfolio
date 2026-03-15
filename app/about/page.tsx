@@ -31,7 +31,7 @@ export default function AboutPage() {
             <ScrollReveal variant="left">
               <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[3/4]">
                 <Image
-                  src="/images/workshop.png"
+                  src="/images/workshop_tool_closeup.png"
                   alt="MOSTFOLIO jewelry workshop"
                   fill
                   className="object-cover"
@@ -56,16 +56,10 @@ export default function AboutPage() {
                 </h2>
                 <div className="h-px w-12 bg-gold-500/40" />
                 <p className="text-base leading-[1.8] text-silver-400">
-                  Founded by Joshua Ayers, MOSTFOLIO LLC was born out of a desire
-                  to create jewelry that speaks to strength and sophistication.
-                  Every piece is meticulously designed to be worn daily and last a
-                  lifetime.
+                  MOSTFOLIO LLC was born from a singular obsession: to engineer artifacts that command attention through sheer structural integrity and uncompromising materials. Joshua Ayers built this brand for those who find beauty in the brutal and elegant in the heavy.
                 </p>
                 <p className="text-base leading-[1.8] text-silver-400">
-                  From sourcing the finest titanium and carbon fiber to
-                  hand-finishing every clasp and setting, our process ensures that
-                  each ring, chain, and bracelet embodies the same bold vision
-                  that sparked MOSTFOLIO into existence.
+                  By treating jewelry as architectural hardware rather than mere accessories, every ring, chain, and bracelet is cast to survive lifetimes. No hollow cores. No fragile aesthetics. This is modern metallurgy designed for permanence.
                 </p>
               </div>
             </ScrollReveal>
@@ -73,11 +67,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── Values — HORIZONTAL rather than grid ─ */}
-      <section className="border-t border-carbon-700/30 bg-carbon-850 py-20 lg:py-28">
+      {/* ─── The Process Split ────────────────── */}
+      <section className="relative bg-carbon-900 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Text */}
+            <ScrollReveal variant="left" className="order-2 lg:order-1">
+              <div className="space-y-6">
+                <p className="text-xs font-medium uppercase tracking-[0.3em] text-silver-500">
+                  The Process
+                </p>
+                <h2 className="text-3xl font-light tracking-wide text-silver-100 sm:text-4xl">
+                  Forged in Fire. <br /> Finished by Hand.
+                </h2>
+                <div className="h-px w-12 bg-silver-500/40" />
+                <p className="text-base leading-[1.8] text-silver-400">
+                  We source our solid 925 sterling silver, medical-grade titanium, and forged carbon from the same foundries that supply aerospace engineering firms. Every gram of metal serves a structural purpose.
+                </p>
+                <p className="text-base leading-[1.8] text-silver-400">
+                  Our artisans shape these raw elements using high-heat casting, precise machining, and deliberate oxidation. We push materials to their limits to extract raw, textured character that cannot be replicated by mass production.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Image */}
+            <ScrollReveal variant="right" delay={150} className="order-1 lg:order-2">
+              <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[3/4]">
+                <Image
+                  src="/images/artisan_metal_crafting.png"
+                  alt="Artisan crafting metal"
+                  fill
+                  className="object-cover"
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-carbon-950/20 mix-blend-multiply" />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Values — HORIZONTAL ──────────────── */}
+      <section className="relative overflow-hidden border-t border-carbon-700/30 bg-carbon-950 py-20 lg:py-28">
+        <div className="absolute right-0 top-0 h-full w-full md:w-1/2 opacity-30 pointer-events-none">
+          <Image
+            src="/images/abstract_metal_statement.png"
+            alt="Abstract metal structure"
+            fill
+            className="object-cover object-center"
+            quality={80}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-carbon-950 via-carbon-950/80 to-transparent" />
+        </div>
+        
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
-            <div className="grid gap-12 sm:grid-cols-3">
+            <div className="grid gap-12 sm:grid-cols-3 max-w-4xl">
               {[
                 {
                   num: '01',
@@ -103,7 +148,7 @@ export default function AboutPage() {
                     {v.title}
                   </h3>
                   <div className="h-px w-8 bg-gold-500/40" />
-                  <p className="text-sm leading-relaxed text-silver-500">
+                  <p className="text-sm leading-relaxed text-silver-400">
                     {v.body}
                   </p>
                 </div>
