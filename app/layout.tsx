@@ -1,19 +1,25 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, DM_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import ConditionalShell from '@/components/ConditionalShell';
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+const playfair = localFont({
+  src: [
+    {
+      path: '../public/fonts/PlayfairDisplay-Variable.ttf',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/PlayfairDisplay-Italic.ttf',
+      style: 'italic',
+    },
+  ],
   variable: '--font-display',
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+const dmSans = localFont({
+  src: '../public/fonts/DMSans-Variable.ttf',
   variable: '--font-body',
   display: 'swap',
 });
